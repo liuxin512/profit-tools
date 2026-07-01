@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProfitTools Chrome扩展 — eBay利润计算器</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+    .container { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
+
+    .header {
+      text-align: center;
+      padding: 40px 0;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: white;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+    .header .icon { font-size: 4rem; }
+    .header h1 { font-size: 1.8rem; margin: 12px 0; }
+    .header p { opacity: 0.85; }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border: 1px solid #e2e8f0;
+    }
+    .card h3 { margin-bottom: 12px; }
+
+    .steps { list-style: none; }
+    .steps li {
+      padding: 12px 0;
+      border-bottom: 1px solid #f1f5f9;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .steps .num {
+      background: #2563eb;
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .steps code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    .btn-download {
+      display: block;
+      text-align: center;
+      padding: 18px 40px;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 20px 0;
+      transition: transform 0.2s;
+    }
+    .btn-download:hover { transform: translateY(-2px); }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 500px) {
+      .features { grid-template-columns: 1fr; }
+    }
+    .feature-item {
+      padding: 12px;
+      background: #f8fafc;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      color: #64748b;
+      text-decoration: none;
+      margin-top: 24px;
+    }
+    .back-link:hover { color: #2563eb; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="icon">🧩</div>
+      <h1>ProfitTools Chrome 扩展</h1>
+      <p>在 eBay 商品页面直接显示利润计算，边逛边算，不错过任何一个产品</p>
+    </div>
+
+    <div class="card">
+      <h3>✨ 功能</h3>
+      <div class="features">
+        <div class="feature-item">📊 自动识别eBay商品价格</div>
+        <div class="feature-item">💰 一键计算净利润和利润率</div>
+        <div class="feature-item">🔍 快速选品判断（值得做/放弃）</div>
+        <div class="feature-item">📈 弹窗计算器，无需离开页面</div>
+        <div class="feature-item">📦 支持eBay美/英/德/澳站</div>
+        <div class="feature-item">🆓 完全免费</div>
+      </div>
+    </div>
+
+    <a href="/chrome-extension.zip" class="btn-download" download>
+      ⬇️ 下载扩展 (ZIP)
+    </a>
+
+    <div class="card">
+      <h3>📋 安装教程（1分钟）</h3>
+      <ol class="steps">
+        <li>
+          <span class="num">1</span>
+          <span>点击上方按钮下载 <code>chrome-extension.zip</code> 并解压到一个文件夹</span>
+        </li>
+        <li>
+          <span class="num">2</span>
+          <span>打开 Chrome，地址栏输入 <code>chrome://extensions</code></span>
+        </li>
+        <li>
+          <span class="num">3</span>
+          <span>打开右上角的 <strong>「开发者模式」</strong>开关</span>
+        </li>
+        <li>
+          <span class="num">4</span>
+          <span>点击 <strong>「加载已解压的扩展程序」</strong></span>
+        </li>
+        <li>
+          <span class="num">5</span>
+          <span>选择刚才解压的文件夹 → 完成！</span>
+        </li>
+      </ol>
+      <p style="margin-top:12px;padding:12px;background:#fef3c7;border-radius:8px;font-size:0.9rem;">
+        💡 安装后打开任意 <strong>eBay.com</strong> 商品页面，右下角会出现 📊 算利润 按钮
+      </p>
+    </div>
+
+    <a href="/" class="back-link">← 返回利润计算器</a>
+  </div>
+</body>
+</html>
