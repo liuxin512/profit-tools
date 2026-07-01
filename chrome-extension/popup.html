@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProfitTools</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 360px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f8fafc;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+    .header h1 { font-size: 1.2rem; color: #1e293b; }
+    .logo { font-size: 1.5rem; }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border: 1px solid #e2e8f0;
+    }
+    .card h3 { font-size: 0.95rem; margin-bottom: 12px; color: #1e293b; }
+
+    .input-group {
+      margin-bottom: 8px;
+    }
+    .input-group label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #64748b;
+      margin-bottom: 4px;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      font-size: 0.85rem;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+    }
+    .btn-primary:hover { background: #1d4ed8; }
+    .btn-success {
+      background: #10b981;
+      color: white;
+    }
+
+    .result {
+      margin-top: 12px;
+      padding: 12px;
+      background: #f1f5f9;
+      border-radius: 8px;
+    }
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      font-size: 0.82rem;
+    }
+    .result-row.profit {
+      font-weight: 700;
+      color: #10b981;
+      font-size: 0.95rem;
+      margin-top: 4px;
+      padding-top: 8px;
+      border-top: 1px solid #e2e8f0;
+    }
+    .result-row.loss {
+      font-weight: 700;
+      color: #ef4444;
+      font-size: 0.95rem;
+    }
+
+    .verdict {
+      margin-top: 8px;
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .verdict-good { background: #ecfdf5; color: #065f46; }
+    .verdict-warn { background: #fffbeb; color: #92400e; }
+    .verdict-bad { background: #fef2f2; color: #991b1b; }
+
+    .footer {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="logo">📊</span>
+    <h1>ProfitTools</h1>
+  </div>
+
+  <div class="card">
+    <h3>💰 eBay 利润计算</h3>
+    <div class="input-group">
+      <label>售价 ($)</label>
+      <input type="number" id="pop-price" placeholder="商品售价" step="0.01">
+    </div>
+    <div class="input-group">
+      <label>成本 ($)</label>
+      <input type="number" id="pop-cost" placeholder="采购成本" step="0.01">
+    </div>
+    <div class="input-group">
+      <label>运费 ($)</label>
+      <input type="number" id="pop-shipping" placeholder="实际运费" step="0.01" value="0">
+    </div>
+    <button class="btn btn-primary" id="pop-calculate">🔍 计算利润</button>
+    <div class="result" id="pop-result" style="display:none;"></div>
+  </div>
+
+  <div class="card">
+    <h3>📈 快速选品判断</h3>
+    <div class="input-group">
+      <label>进价 ($)</label>
+      <input type="number" id="quick-cost" placeholder="采购价格" step="0.01">
+    </div>
+    <div class="input-group">
+      <label>同类售价 ($)</label>
+      <input type="number" id="quick-price" placeholder="eBay上同类售价" step="0.01">
+    </div>
+    <button class="btn btn-success" id="quick-check">⚡ 快速判断</button>
+    <div class="result" id="quick-result" style="display:none;"></div>
+  </div>
+
+  <div class="footer">
+    <a href="https://profittools.pro" target="_blank">打开完整版 →</a>
+    &nbsp;|&nbsp;
+    <span>Pro 版即将上线</span>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

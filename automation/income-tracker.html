@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>收入仪表盘 — ProfitTools</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 24px;
+      min-height: 100vh;
+    }
+    .dashboard { max-width: 1200px; margin: 0 auto; }
+    h1 { font-size: 1.8rem; margin-bottom: 4px; }
+    .subtitle { color: #64748b; margin-bottom: 24px; }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .metric-card {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #334155;
+    }
+    .metric-card .label { font-size: 0.8rem; color: #64748b; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .metric-card .value { font-size: 2rem; font-weight: 800; }
+    .metric-card .change { font-size: 0.8rem; margin-top: 4px; }
+    .positive { color: #10b981; }
+    .negative { color: #ef4444; }
+
+    .revenue-table {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #334155;
+      margin-bottom: 24px;
+    }
+    .revenue-table h3 { margin-bottom: 16px; }
+    table { width: 100%; border-collapse: collapse; }
+    th { text-align: left; padding: 10px 8px; border-bottom: 1px solid #334155; color: #64748b; font-size: 0.8rem; font-weight: 600; }
+    td { padding: 12px 8px; border-bottom: 1px solid #1e293b; font-size: 0.9rem; }
+    .stream-name { font-weight: 600; }
+    .stream-amount { color: #10b981; font-weight: 600; }
+    .stream-status { font-size: 0.8rem; }
+    .status-active { color: #10b981; }
+    .status-pending { color: #f59e0b; }
+    .status-inactive { color: #ef4444; }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .action-card {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #334155;
+    }
+    .action-card h4 { margin-bottom: 8px; }
+    .action-card p { color: #94a3b8; font-size: 0.85rem; margin-bottom: 12px; }
+    .action-card .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .action-card .btn:hover { background: #1d4ed8; }
+
+    .progress-bar {
+      height: 6px;
+      background: #334155;
+      border-radius: 3px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #7c3aed);
+      border-radius: 3px;
+      transition: width 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <h1>📊 ProfitTools 收入仪表盘</h1>
+    <p class="subtitle">最后更新: <span id="last-updated">2026-07-01</span> | 月度目标: $1,000</p>
+
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="label">📢 广告收入</div>
+        <div class="value">$0</div>
+        <div class="change positive">↑ 待上线</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">🔗 联盟佣金</div>
+        <div class="value">$0</div>
+        <div class="change positive">↑ 待上线</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">📦 数字产品</div>
+        <div class="value">$0</div>
+        <div class="change positive">↑ 待上线</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">🧩 Chrome扩展</div>
+        <div class="value">$0</div>
+        <div class="change positive">↑ 待上线</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">⭐ Pro订阅</div>
+        <div class="value">$0</div>
+        <div class="change positive">↑ 待上线</div>
+      </div>
+      <div class="metric-card" style="border: 2px solid #10b981;">
+        <div class="label">💰 本月总收入</div>
+        <div class="value" style="font-size:2.5rem;">$0</div>
+        <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+        <div style="font-size:0.75rem;color:#64748b;margin-top:4px;">0% 完成月目标 ($1,000)</div>
+      </div>
+    </div>
+
+    <div class="revenue-table">
+      <h3>📋 收入流水</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>日期</th>
+            <th>来源</th>
+            <th>描述</th>
+            <th>金额</th>
+            <th>状态</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="5" style="text-align:center;color:#64748b;padding:32px;">
+              📊 收入数据将在部署后自动更新<br>
+              <small>部署 AdSense + 联盟链接 + 数字产品后开始记录</small>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="action-grid">
+      <div class="action-card">
+        <h4>🚀 部署 Web 工具箱</h4>
+        <p>将计算器部署到 Vercel/Netlify，开始获取流量</p>
+        <code style="display:block;background:#0f172a;padding:8px;border-radius:4px;font-size:0.8rem;margin-bottom:8px;">npm run deploy</code>
+        <span class="stream-status status-pending">⏳ 待部署</span>
+      </div>
+      <div class="action-card">
+        <h4>💰 注册 Google AdSense</h4>
+        <p>在 adsense.google.com 注册，获取广告代码并替换</p>
+        <span class="stream-status status-pending">⏳ 待注册</span>
+      </div>
+      <div class="action-card">
+        <h4>🔗 加入 eBay 联盟</h4>
+        <p>在 partnernetwork.ebay.com 注册获取联盟链接</p>
+        <span class="stream-status status-pending">⏳ 待注册</span>
+      </div>
+      <div class="action-card">
+        <h4>📦 上架数字产品</h4>
+        <p>在 Gumroad/Etsy 创建产品列表并设置价格</p>
+        <span class="stream-status status-pending">⏳ 待上架</span>
+      </div>
+      <div class="action-card">
+        <h4>🧩 发布 Chrome 扩展</h4>
+        <p>提交到 Chrome Web Store 审核 (一次性的开发者注册费 $5)</p>
+        <span class="stream-status status-pending">⏳ 待发布</span>
+      </div>
+      <div class="action-card">
+        <h4>📝 发布 SEO 文章</h4>
+        <p>5篇文章已生成，部署后按每周一篇发布</p>
+        <span class="stream-status status-active">✅ 内容就绪</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Auto-update date
+    document.getElementById('last-updated').textContent = new Date().toISOString().split('T')[0];
+
+    // Revenue data (manually update or connect to API)
+    const revenueData = JSON.parse(localStorage.getItem('revenue') || '{}');
+    // Future: fetch from AdSense API, eBay Partner Network API, Gumroad API
+  </script>
+</body>
+</html>

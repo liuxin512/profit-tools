@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProfitTools - eBay卖家利润计算器 | 跨境电商工具箱</title>
+  <meta name="description" content="免费eBay利润计算器、FBA费用计算、跨境选品对比工具。帮卖家精准算利润，不做亏本买卖。">
+  <meta name="keywords" content="eBay利润计算器,跨境电商,亚马逊费用计算,FBA计算器,选品工具,利润分析">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="/" class="logo">
+          <span class="logo-icon">📊</span>
+          <span>ProfitTools</span>
+        </a>
+        <div class="nav-links">
+          <a href="#calculators">计算器</a>
+          <a href="#compare">选品对比</a>
+          <a href="#learn">学习</a>
+          <a href="#pro" class="btn-pro">Pro版</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>跨境电商<span class="highlight">利润</span>计算器</h1>
+      <p class="hero-sub">eBay · Amazon · 独立站 — 精准计算每一分利润，再也不做亏本买卖</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">50,000+</span>
+          <span class="stat-label">卖家使用</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">99.8%</span>
+          <span class="stat-label">费率精准</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">免费</span>
+          <span class="stat-label">核心功能</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ad Banner -->
+  <div class="ad-banner container">
+    <div class="ad-placeholder">
+      <span>📢 广告位 — 月流量 50K+ 卖家群体精准投放</span>
+    </div>
+  </div>
+
+  <!-- Main Tools -->
+  <main class="container" id="calculators">
+    <!-- Tab Navigation -->
+    <div class="tool-tabs">
+      <button class="tab-btn active" data-tab="ebay">📦 eBay 费用计算</button>
+      <button class="tab-btn" data-tab="profit">💰 利润分析</button>
+      <button class="tab-btn" data-tab="breakeven">📉 盈亏平衡</button>
+      <button class="tab-btn" data-tab="compare">🔄 选品对比</button>
+      <button class="tab-btn" data-tab="fba">📦 FBA 计算器</button>
+    </div>
+
+    <!-- Tab 1: eBay Fee Calculator -->
+    <section class="tool-panel active" id="panel-ebay">
+      <div class="tool-grid">
+        <div class="tool-form">
+          <h2>eBay 费用精准计算</h2>
+          <p class="form-desc">支持 eBay 美国站、英国站、德国站费率实时计算</p>
+
+          <div class="form-group">
+            <label>eBay 站点</label>
+            <select id="ebay-site" class="input">
+              <option value="us">🇺🇸 eBay.com (美国站)</option>
+              <option value="uk">🇬🇧 eBay.co.uk (英国站)</option>
+              <option value="de">🇩🇪 eBay.de (德国站)</option>
+              <option value="au">🇦🇺 eBay.com.au (澳洲站)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>商品售价 ($)</label>
+            <input type="number" id="ebay-price" class="input" placeholder="例如: 29.99" step="0.01" min="0">
+          </div>
+
+          <div class="form-group">
+            <label>运费收入 ($)</label>
+            <input type="number" id="ebay-shipping" class="input" placeholder="向买家收取的运费" step="0.01" min="0" value="0">
+          </div>
+
+          <div class="form-group">
+            <label>商品成本 ($)</label>
+            <input type="number" id="ebay-cost" class="input" placeholder="采购/进货成本" step="0.01" min="0">
+          </div>
+
+          <div class="form-group">
+            <label>实际运费 ($)</label>
+            <input type="number" id="ebay-actual-shipping" class="input" placeholder="你实际支付的运费" step="0.01" min="0">
+          </div>
+
+          <div class="form-group">
+            <label>是否有店铺订阅</label>
+            <select id="ebay-store" class="input">
+              <option value="none">无店铺</option>
+              <option value="starter">Starter Store ($4.95/月)</option>
+              <option value="basic">Basic Store ($21.95/月)</option>
+              <option value="premium">Premium Store ($59.95/月)</option>
+              <option value="anchor">Anchor Store ($299.95/月)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>商品类别</label>
+            <select id="ebay-category" class="input">
+              <option value="most">大多数分类 (13.25%)</option>
+              <option value="books">图书 & DVD (14.95%)</option>
+              <option value="musical">乐器 & 装备 (8%)</option>
+              <option value="parts">汽车零配件 (8.55%)</option>
+              <option value="jewelry">珠宝手表 (15%)</option>
+              <option value="clothing">服装鞋包 (12.35%)</option>
+              <option value="electronics">消费电子 (8%)</option>
+            </select>
+          </div>
+
+          <button class="btn-calculate" onclick="calculateEBay()">🔍 计算利润</button>
+        </div>
+
+        <div class="tool-result" id="ebay-result">
+          <div class="result-placeholder">
+            <div class="placeholder-icon">📊</div>
+            <h3>输入数据查看利润明细</h3>
+            <p>完整费用拆解 + 净利润率一目了然</p>
+          </div>
+          <div class="result-content" style="display:none;">
+            <h3>📋 费用明细</h3>
+            <div class="fee-breakdown">
+              <div class="fee-row"><span>成交费 (Final Value Fee)</span><span id="fee-fvf">-</span></div>
+              <div class="fee-row"><span>上架费 (Insertion Fee)</span><span id="fee-insertion">-</span></div>
+              <div class="fee-row"><span>支付处理费</span><span id="fee-payment">-</span></div>
+              <div class="fee-row"><span>店铺费 (月度分摊)</span><span id="fee-store">-</span></div>
+              <div class="fee-row"><span>推广费 (Promoted Listing)</span><span id="fee-promo">-</span></div>
+              <div class="fee-divider"></div>
+              <div class="fee-row total"><span>总费用</span><span id="fee-total">-</span></div>
+              <div class="fee-row profit"><span>💰 净利润</span><span id="fee-net">-</span></div>
+              <div class="fee-row margin"><span>📈 净利润率</span><span id="fee-margin">-</span></div>
+            </div>
+            <div class="result-verdict" id="ebay-verdict"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 2: Profit Analyzer -->
+    <section class="tool-panel" id="panel-profit">
+      <div class="tool-grid">
+        <div class="tool-form">
+          <h2>利润综合分析</h2>
+          <p class="form-desc">ROI、利润率、回本周期 — 一次算清</p>
+
+          <div class="form-group">
+            <label>销售平台</label>
+            <select id="profit-platform" class="input">
+              <option value="ebay">eBay</option>
+              <option value="amazon">Amazon FBA</option>
+              <option value="amazon-fbm">Amazon FBM</option>
+              <option value="shopify">Shopify 独立站</option>
+              <option value="etsy">Etsy</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>售价 ($)</label>
+            <input type="number" id="profit-price" class="input" placeholder="最终售价" step="0.01" min="0">
+          </div>
+
+          <div class="form-group">
+            <label>单品成本 ($)</label>
+            <input type="number" id="profit-cost" class="input" placeholder="商品采购成本" step="0.01" min="0">
+          </div>
+
+          <div class="form-group">
+            <label>运费/物流 ($)</label>
+            <input type="number" id="profit-shipping" class="input" placeholder="单件物流成本" step="0.01" min="0">
+          </div>
+
+          <div class="form-group">
+            <label>平台费用 (估算 %)</label>
+            <input type="number" id="profit-fee-rate" class="input" placeholder="平台佣金 + 手续费" step="0.1" min="0" value="15">
+          </div>
+
+          <div class="form-group">
+            <label>广告费/件 ($)</label>
+            <input type="number" id="profit-ad" class="input" placeholder="平均广告花费" step="0.01" min="0" value="0">
+          </div>
+
+          <div class="form-group">
+            <label>其他费用/件 ($)</label>
+            <input type="number" id="profit-other" class="input" placeholder="包装、仓储、退货等" step="0.01" min="0" value="0">
+          </div>
+
+          <div class="form-group">
+            <label>月销量预估</label>
+            <input type="number" id="profit-monthly" class="input" placeholder="预计每月销售件数" min="0" value="30">
+          </div>
+
+          <button class="btn-calculate" onclick="calculateProfit()">📊 综合分析</button>
+        </div>
+
+        <div class="tool-result" id="profit-result">
+          <div class="result-placeholder">
+            <div class="placeholder-icon">💰</div>
+            <h3>查看完整利润分析</h3>
+            <p>毛利率、净利润、年化收入预测</p>
+          </div>
+          <div class="result-content" style="display:none;">
+            <h3>📊 利润分析报告</h3>
+            <div class="fee-breakdown">
+              <div class="fee-row"><span>单件毛利润</span><span id="res-gross">-</span></div>
+              <div class="fee-row"><span>单件净利润</span><span id="res-net">-</span></div>
+              <div class="fee-row"><span>毛利率</span><span id="res-gross-margin">-</span></div>
+              <div class="fee-row"><span>净利润率</span><span id="res-net-margin">-</span></div>
+              <div class="fee-divider"></div>
+              <div class="fee-row"><span>月净利润</span><span id="res-monthly">-</span></div>
+              <div class="fee-row profit"><span>💰 年化净利润</span><span id="res-yearly">-</span></div>
+              <div class="fee-row"><span>ROI</span><span id="res-roi">-</span></div>
+            </div>
+            <div class="result-verdict" id="profit-verdict"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 3: Break-even -->
+    <section class="tool-panel" id="panel-breakeven">
+      <div class="tool-grid">
+        <div class="tool-form">
+          <h2>盈亏平衡分析</h2>
+          <p class="form-desc">算清要卖多少件才能回本</p>
+
+          <div class="form-group">
+            <label>固定成本 ($)</label>
+            <input type="number" id="be-fixed" class="input" placeholder="月租、软件订阅、仓储费等" step="0.01" min="0">
+          </div>
+          <div class="form-group">
+            <label>单品变动成本 ($)</label>
+            <input type="number" id="be-variable" class="input" placeholder="采购成本 + 运费 + 包装" step="0.01" min="0">
+          </div>
+          <div class="form-group">
+            <label>售价 ($)</label>
+            <input type="number" id="be-price" class="input" placeholder="每件售价" step="0.01" min="0">
+          </div>
+          <button class="btn-calculate" onclick="calculateBreakEven()">📉 计算盈亏平衡点</button>
+        </div>
+        <div class="tool-result" id="breakeven-result">
+          <div class="result-placeholder">
+            <div class="placeholder-icon">📉</div>
+            <h3>找到你的盈亏平衡点</h3>
+            <p>输入成本和售价，一键算清</p>
+          </div>
+          <div class="result-content" style="display:none;">
+            <h3>🎯 盈亏分析</h3>
+            <div class="fee-breakdown">
+              <div class="fee-row"><span>每件贡献毛利</span><span id="be-contribution">-</span></div>
+              <div class="fee-row highlight"><span>🎯 盈亏平衡销量</span><span id="be-units">-</span></div>
+              <div class="fee-row"><span>盈亏平衡销售额</span><span id="be-revenue">-</span></div>
+            </div>
+            <div class="result-verdict" id="be-verdict"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 4: Product Comparison -->
+    <section class="tool-panel" id="panel-compare">
+      <div class="tool-grid">
+        <div class="tool-form">
+          <h2>选品对比工具</h2>
+          <p class="form-desc">同时对比 3 个产品，选出最优</p>
+
+          <div class="compare-grid">
+            <div class="compare-col">
+              <h4>产品 A</h4>
+              <input type="text" id="comp-a-name" class="input" placeholder="产品名称">
+              <input type="number" id="comp-a-cost" class="input" placeholder="成本 ($)" step="0.01">
+              <input type="number" id="comp-a-price" class="input" placeholder="售价 ($)" step="0.01">
+              <input type="number" id="comp-a-fee" class="input" placeholder="平台费 (%)" value="15" step="0.1">
+              <input type="number" id="comp-a-volume" class="input" placeholder="预估月销" value="30">
+            </div>
+            <div class="compare-col">
+              <h4>产品 B</h4>
+              <input type="text" id="comp-b-name" class="input" placeholder="产品名称">
+              <input type="number" id="comp-b-cost" class="input" placeholder="成本 ($)" step="0.01">
+              <input type="number" id="comp-b-price" class="input" placeholder="售价 ($)" step="0.01">
+              <input type="number" id="comp-b-fee" class="input" placeholder="平台费 (%)" value="15" step="0.1">
+              <input type="number" id="comp-b-volume" class="input" placeholder="预估月销" value="30">
+            </div>
+            <div class="compare-col">
+              <h4>产品 C</h4>
+              <input type="text" id="comp-c-name" class="input" placeholder="产品名称">
+              <input type="number" id="comp-c-cost" class="input" placeholder="成本 ($)" step="0.01">
+              <input type="number" id="comp-c-price" class="input" placeholder="售价 ($)" step="0.01">
+              <input type="number" id="comp-c-fee" class="input" placeholder="平台费 (%)" value="15" step="0.1">
+              <input type="number" id="comp-c-volume" class="input" placeholder="预估月销" value="30">
+            </div>
+          </div>
+          <button class="btn-calculate" onclick="compareProducts()">🔄 开始对比</button>
+        </div>
+        <div class="tool-result" id="compare-result">
+          <div class="result-placeholder">
+            <div class="placeholder-icon">🔄</div>
+            <h3>对比结果一目了然</h3>
+            <p>输入3个产品的数据，自动排出优先级</p>
+          </div>
+          <div class="result-content" style="display:none;">
+            <h3>🏆 对比结果</h3>
+            <div id="compare-output"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 5: FBA Calculator -->
+    <section class="tool-panel" id="panel-fba">
+      <div class="tool-grid">
+        <div class="tool-form">
+          <h2>Amazon FBA 费用计算</h2>
+          <p class="form-desc">准确估算 FBA 仓储 + 配送费用</p>
+
+          <div class="form-group">
+            <label>商品售价 ($)</label>
+            <input type="number" id="fba-price" class="input" placeholder="售价" step="0.01" min="0">
+          </div>
+          <div class="form-group">
+            <label>商品重量 (磅)</label>
+            <input type="number" id="fba-weight" class="input" placeholder="含包装的重量" step="0.01" min="0">
+          </div>
+          <div class="form-group">
+            <label>商品尺寸 (大边, 英寸)</label>
+            <input type="number" id="fba-size" class="input" placeholder="最长边的尺寸" step="0.1" min="0">
+          </div>
+          <div class="form-group">
+            <label>商品成本 ($)</label>
+            <input type="number" id="fba-cost" class="input" placeholder="采购成本" step="0.01" min="0">
+          </div>
+          <div class="form-group">
+            <label>头程运费/件 ($)</label>
+            <input type="number" id="fba-inbound" class="input" placeholder="从中国到FBA仓库" step="0.01" min="0">
+          </div>
+          <button class="btn-calculate" onclick="calculateFBA()">📦 计算 FBA 费用</button>
+        </div>
+        <div class="tool-result" id="fba-result">
+          <div class="result-placeholder">
+            <div class="placeholder-icon">📦</div>
+            <h3>FBA 费用明细</h3>
+            <p>仓储 + 配送 + 佣金 — 完整拆解</p>
+          </div>
+          <div class="result-content" style="display:none;">
+            <h3>📦 FBA 费用明细</h3>
+            <div class="fee-breakdown">
+              <div class="fee-row"><span>推荐费 (佣金 15%)</span><span id="fba-referral">-</span></div>
+              <div class="fee-row"><span>FBA 配送费</span><span id="fba-fulfillment">-</span></div>
+              <div class="fee-row"><span>月度仓储费 (估算)</span><span id="fba-storage">-</span></div>
+              <div class="fee-divider"></div>
+              <div class="fee-row total"><span>总费用</span><span id="fba-total">-</span></div>
+              <div class="fee-row profit"><span>💰 净利润</span><span id="fba-net">-</span></div>
+              <div class="fee-row margin"><span>📈 净利润率</span><span id="fba-margin">-</span></div>
+            </div>
+            <div class="result-verdict" id="fba-verdict"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Learn Section -->
+  <section class="learn-section" id="learn">
+    <div class="container">
+      <h2>📚 跨境电商指南</h2>
+      <div class="learn-grid">
+        <a href="#" class="learn-card">
+          <div class="learn-icon">🚀</div>
+          <h3>eBay 新手入门</h3>
+          <p>从注册到出单，完整流程</p>
+          <span class="read-more">阅读 →</span>
+        </a>
+        <a href="#" class="learn-card">
+          <div class="learn-icon">💡</div>
+          <h3>选品方法论</h3>
+          <p>如何找到高利润蓝海产品</p>
+          <span class="read-more">阅读 →</span>
+        </a>
+        <a href="#" class="learn-card">
+          <div class="learn-icon">📦</div>
+          <h3>物流方案对比</h3>
+          <p>哪种发货方式最省钱？</p>
+          <span class="read-more">阅读 →</span>
+        </a>
+        <a href="#" class="learn-card">
+          <div class="learn-icon">📈</div>
+          <h3>定价策略</h3>
+          <p>科学定价，利润最大化</p>
+          <span class="read-more">阅读 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pro CTA -->
+  <section class="pro-section" id="pro">
+    <div class="container">
+      <div class="pro-card">
+        <div class="pro-badge">🔥 PRO</div>
+        <h2>升级 ProfitTools Pro</h2>
+        <p class="pro-desc">解锁高级功能，让你的电商生意更上一层楼</p>
+        <div class="pro-features">
+          <div class="pro-feature">✅ 批量产品利润分析（支持 Excel 导入）</div>
+          <div class="pro-feature">✅ 实时汇率自动换算</div>
+          <div class="pro-feature">✅ eBay 热销品数据追踪</div>
+          <div class="pro-feature">✅ 竞品价格监控 & 自动提醒</div>
+          <div class="pro-feature">✅ 利润仪表盘 & 月度报告</div>
+          <div class="pro-feature">✅ API 接入 & 数据导出</div>
+        </div>
+        <p class="pro-price">$9.99<span>/月</span></p>
+        <button class="btn-pro-cta" onclick="alert('感谢关注！Pro版即将上线。')">🚀 立即升级 Pro</button>
+        <p class="pro-note">7天免费试用 · 随时取消 · 30天退款保证</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- eBay Partner CTA -->
+  <div class="ebay-partner container">
+    <div class="partner-card">
+      <h3>🤝 eBay 卖家？从这里开始你的第一笔生意</h3>
+      <p>注册 eBay 卖家账号，开启全球销售之旅</p>
+      <a href="https://www.ebay.com" target="_blank" rel="nofollow sponsored" class="btn-partner">注册 eBay 卖家 →</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>ProfitTools</h4>
+          <p>跨境电商卖家必备利润计算工具</p>
+          <p class="copyright">© 2026 ProfitTools. All rights reserved.</p>
+        </div>
+        <div class="footer-col">
+          <h4>工具</h4>
+          <a href="#calculators">eBay 计算器</a>
+          <a href="#calculators">利润分析</a>
+          <a href="#calculators">选品对比</a>
+          <a href="#calculators">FBA 计算器</a>
+        </div>
+        <div class="footer-col">
+          <h4>资源</h4>
+          <a href="#learn">新手教程</a>
+          <a href="#learn">选品指南</a>
+          <a href="#learn">物流方案</a>
+          <a href="#learn">定价策略</a>
+        </div>
+        <div class="footer-col">
+          <h4>关于</h4>
+          <a href="mailto:hello@profittools.pro">联系我们</a>
+          <a href="#">隐私政策</a>
+          <a href="#">服务条款</a>
+          <a href="#">广告合作</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/src/tools/ebay-calculator.js"></script>
+  <script src="/src/tools/profit-calculator.js"></script>
+  <script src="/src/tools/breakeven.js"></script>
+  <script src="/src/tools/product-comparison.js"></script>
+  <script src="/src/tools/fba-calculator.js"></script>
+  <script src="/src/js/main.js"></script>
+</body>
+</html>

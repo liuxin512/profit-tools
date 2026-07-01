@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>跨境电商指南 — eBay/Amazon卖家实操教程 · 选品 · 利润计算</title>
+  <meta name="description" content="专注跨境电商卖家成长，提供eBay教程、Amazon FBA指南、选品策略、利润计算、物流方案等实操内容。">
+  <meta name="keywords" content="跨境电商,eBay教程,Amazon FBA,选品,利润计算,物流,独立站">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    .header {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+    .logo { font-size: 1.3rem; font-weight: 800; color: #2563eb; text-decoration: none; }
+    .nav a {
+      margin-left: 20px;
+      color: #64748b;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .nav a:hover { color: #2563eb; }
+
+    /* Layout */
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 32px;
+      padding: 32px 0;
+    }
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+    }
+
+    /* Posts */
+    .post-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.2s;
+    }
+    .post-card:hover { transform: translateY(-2px); }
+    .post-category {
+      display: inline-block;
+      background: #eff6ff;
+      color: #2563eb;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .post-card h2 { font-size: 1.3rem; margin-bottom: 8px; }
+    .post-card h2 a { color: #1e293b; text-decoration: none; }
+    .post-card h2 a:hover { color: #2563eb; }
+    .post-meta { color: #94a3b8; font-size: 0.8rem; margin-bottom: 8px; }
+    .post-excerpt { color: #64748b; font-size: 0.9rem; margin-bottom: 12px; }
+    .read-more { color: #2563eb; font-weight: 600; text-decoration: none; font-size: 0.85rem; }
+
+    /* Sidebar */
+    .sidebar-widget {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      border: 1px solid #e2e8f0;
+    }
+    .sidebar-widget h3 { margin-bottom: 12px; font-size: 1rem; }
+    .sidebar-widget ul { list-style: none; }
+    .sidebar-widget li { margin-bottom: 8px; }
+    .sidebar-widget a { color: #2563eb; text-decoration: none; font-size: 0.9rem; }
+    .sidebar-widget a:hover { text-decoration: underline; }
+
+    .ad-widget {
+      background: #fef3c7;
+      border: 2px dashed #f59e0b;
+      border-radius: 12px;
+      padding: 32px 20px;
+      text-align: center;
+      color: #92400e;
+    }
+
+    /* Tool CTA */
+    .tool-cta {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: white;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .tool-cta h3 { margin-bottom: 8px; }
+    .tool-cta p { font-size: 0.9rem; opacity: 0.9; margin-bottom: 12px; }
+    .btn-tool {
+      display: inline-block;
+      padding: 10px 24px;
+      background: white;
+      color: #2563eb;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      background: white;
+      border-top: 1px solid #e2e8f0;
+      padding: 40px 0;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">🌏 跨境指南</a>
+      <nav class="nav">
+        <a href="/">首页</a>
+        <a href="/ebay/">eBay</a>
+        <a href="/amazon/">Amazon</a>
+        <a href="/tools/">工具</a>
+        <a href="/about/">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="layout">
+      <!-- Main Content -->
+      <div class="content">
+        <article class="post-card">
+          <span class="post-category">📖 eBay教程</span>
+          <h2><a href="/ebay/getting-started/">2026 eBay 新手开店完整指南：从注册到出第一单</a></h2>
+          <div class="post-meta">📅 2026-06-28 · ⏱ 8分钟阅读 · 👁 12,500阅读</div>
+          <p class="post-excerpt">手把手带你完成 eBay 卖家账号注册、PayPal 绑定、产品上架、运费设置和第一单成交。包含2026年最新政策解读和避坑指南。</p>
+          <a href="/ebay/getting-started/" class="read-more">阅读全文 →</a>
+        </article>
+
+        <article class="post-card">
+          <span class="post-category">💡 选品策略</span>
+          <h2><a href="/sourcing/profitable-niches/">5个2026年还能赚到钱的 eBay 蓝海品类</a></h2>
+          <div class="post-meta">📅 2026-06-25 · ⏱ 6分钟阅读 · 👁 8,900阅读</div>
+          <p class="post-excerpt">汽车清洁用品、宠物配件、家居收纳——这些不起眼的小品类，竞争低、利润高、无需认证。附详细的利润分析数据。</p>
+          <a href="/sourcing/profitable-niches/" class="read-more">阅读全文 →</a>
+        </article>
+
+        <!-- Google Ad -->
+        <div style="background:#f1f5f9;border:2px dashed #cbd5e1;border-radius:12px;padding:24px;text-align:center;margin-bottom:20px;color:#94a3b8;">
+          📢 Google AdSense 广告位 — 月均展示 30K+
+        </div>
+
+        <article class="post-card">
+          <span class="post-category">🧮 利润分析</span>
+          <h2><a href="/tools/profit-calculation/">eBay 费用到底扣多少？2026最新费率详解 + 免费计算器</a></h2>
+          <div class="post-meta">📅 2026-06-22 · ⏱ 5分钟阅读 · 👁 6,700阅读</div>
+          <p class="post-excerpt">成交费、支付处理费、店铺费、推广费——eBay的扣费项目比你想象的多。用我们的免费计算器一键算清真实利润。</p>
+          <a href="/tools/profit-calculation/" class="read-more">阅读全文 →</a>
+        </article>
+
+        <article class="post-card">
+          <span class="post-category">📦 物流方案</span>
+          <h2><a href="/logistics/cheapest-shipping/">从中国发货到美国：7种物流方案成本对比（2026版）</a></h2>
+          <div class="post-meta">📅 2026-06-20 · ⏱ 7分钟阅读 · 👁 15,200阅读</div>
+          <p class="post-excerpt">ePacket、燕文、云途、4PX、DHL——不同重量段选什么物流最省钱？实测数据+费用对比表，帮你每单省$2-5。</p>
+          <a href="/logistics/cheapest-shipping/" class="read-more">阅读全文 →</a>
+        </article>
+
+        <article class="post-card">
+          <span class="post-category">📈 运营技巧</span>
+          <h2><a href="/operations/pricing-strategy/">定价心理学：为什么$29.99比$30好卖？</a></h2>
+          <div class="post-meta">📅 2026-06-18 · ⏱ 4分钟阅读 · 👁 5,100阅读</div>
+          <p class="post-excerpt">锚定效应、价格尾数、运费策略——掌握这5个定价心理学技巧，转化率提升30%以上。</p>
+          <a href="/operations/pricing-strategy/" class="read-more">阅读全文 →</a>
+        </article>
+
+        <article class="post-card">
+          <span class="post-category">🎯 实战案例</span>
+          <h2><a href="/cases/dropshipping-success/">代发模式月入$3,000实操复盘：从选品到稳定出单</a></h2>
+          <div class="post-meta">📅 2026-06-15 · ⏱ 10分钟阅读 · 👁 18,300阅读</div>
+          <p class="post-excerpt">不囤货、不压资金的 eBay 代发(dropshipping)模式全流程。真实案例：如何用$200启动资金做到月利润$3,000。</p>
+          <a href="/cases/dropshipping-success/" class="read-more">阅读全文 →</a>
+        </article>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="tool-cta">
+          <h3>📊 免费利润计算器</h3>
+          <p>eBay · Amazon · 独立站<br>精准算利润，不做亏本买卖</p>
+          <a href="/tools/" class="btn-tool">立即使用 →</a>
+        </div>
+
+        <div class="sidebar-widget" style="margin-top:20px;">
+          <h3>🔥 热门文章</h3>
+          <ul>
+            <li><a href="/ebay/getting-started/">→ eBay新手开店完整指南</a></li>
+            <li><a href="/logistics/cheapest-shipping/">→ 中美物流成本对比</a></li>
+            <li><a href="/sourcing/profitable-niches/">→ 5个蓝海品类推荐</a></li>
+            <li><a href="/cases/dropshipping-success/">→ 代发模式月入$3000</a></li>
+            <li><a href="/tools/profit-calculation/">→ eBay费用2026详解</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3>🏷️ 分类</h3>
+          <ul>
+            <li><a href="/ebay/">📖 eBay教程 (12篇)</a></li>
+            <li><a href="/amazon/">📦 Amazon FBA (8篇)</a></li>
+            <li><a href="/sourcing/">💡 选品策略 (15篇)</a></li>
+            <li><a href="/logistics/">🚚 物流方案 (6篇)</a></li>
+            <li><a href="/operations/">📈 运营技巧 (10篇)</a></li>
+            <li><a href="/tools/">🧮 免费工具 (4个)</a></li>
+          </ul>
+        </div>
+
+        <div class="ad-widget">
+          <p><strong>📢 广告位招租</strong></p>
+          <p style="font-size:0.8rem;">月浏览量 30K+ · 精准电商卖家流量</p>
+          <p style="font-size:0.8rem;margin-top:4px;">合作联系: ads@crossborder.pro</p>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3>📬 订阅更新</h3>
+          <p style="font-size:0.85rem;color:#64748b;margin-bottom:8px;">每周推送最新跨境电商干货</p>
+          <input type="email" placeholder="输入邮箱地址" style="width:100%;padding:8px 12px;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;font-size:0.85rem;">
+          <button style="width:100%;padding:10px;background:#2563eb;color:white;border:none;border-radius:8px;font-weight:600;cursor:pointer;">订阅</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>🌏 跨境电商指南 © 2026 — 助力中国卖家出海</p>
+    <p style="margin-top:4px;">本站内容仅供学习参考 · 含联盟营销链接 · <a href="/privacy/">隐私政策</a></p>
+  </footer>
+</body>
+</html>

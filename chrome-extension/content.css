@@ -1,0 +1,21 @@
+/* Content script styles - scoped to our elements */
+
+#profittools-float:hover {
+  transform: scale(1.05);
+}
+
+#profittools-overlay input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+
+#profittools-calc:hover {
+  background: #1d4ed8;
+}
+
+/* Ensure our elements stay on top of eBay's UI */
+#profittools-float,
+#profittools-overlay {
+  pointer-events: auto;
+}

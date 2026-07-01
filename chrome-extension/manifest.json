@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "ProfitTools - eBay利润计算器",
+  "version": "1.0.0",
+  "description": "在eBay商品页面直接显示利润计算、费用拆解和选品分析。跨境电商卖家必备工具。",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.ebay.com/itm/*",
+        "*://*.ebay.com/sch/*",
+        "*://*.ebay.co.uk/itm/*",
+        "*://*.ebay.de/itm/*",
+        "*://*.amazon.com/dp/*",
+        "*://*.amazon.com/gp/product/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.ebay.com/*",
+    "*://*.ebay.co.uk/*",
+    "*://*.ebay.de/*",
+    "*://*.amazon.com/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

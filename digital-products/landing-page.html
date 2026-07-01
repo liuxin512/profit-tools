@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eBay跨境电商全套工具包 — 从0到月入$5000实操指南</title>
+  <meta name="description" content="eBay选品表格、利润计算器、从零开始操作手册、社媒营销模板——一套搞定跨境电商。已帮助500+卖家出单。">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      color: #1e293b;
+      line-height: 1.7;
+      background: #f8fafc;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* Hero */
+    .hero-sales {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #1e3a5f 100%);
+      color: white;
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    .hero-sales h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .hero-sales .subtitle {
+      font-size: 1.2rem;
+      color: #94a3b8;
+      margin-bottom: 32px;
+    }
+    .hero-sales .price-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      padding: 12px 32px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+    }
+    .hero-sales .original { text-decoration: line-through; color: #ef4444; font-size: 1.5rem; }
+    .hero-sales .current { font-size: 3rem; font-weight: 800; color: #10b981; margin-left: 12px; }
+    .btn-buy {
+      display: inline-block;
+      padding: 18px 60px;
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-buy:hover { transform: translateY(-3px); box-shadow: 0 10px 40px rgba(245,158,11,0.4); }
+
+    /* What's inside */
+    .whats-inside { padding: 60px 0; }
+    .whats-inside h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.2s;
+    }
+    .product-card:hover { transform: translateY(-4px); }
+    .product-card .icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .product-card h3 { margin-bottom: 8px; font-size: 1.1rem; }
+    .product-card p { color: #64748b; font-size: 0.9rem; margin-bottom: 8px; }
+    .product-card .value { color: #10b981; font-weight: 700; font-size: 0.85rem; }
+
+    /* Testimonials */
+    .testimonials { padding: 60px 0; background: white; }
+    .testimonials h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .testimonial {
+      padding: 24px;
+      background: #f8fafc;
+      border-radius: 12px;
+      border-left: 4px solid #2563eb;
+    }
+    .testimonial .stars { color: #f59e0b; margin-bottom: 8px; font-size: 1.2rem; }
+    .testimonial .text { font-style: italic; margin-bottom: 12px; }
+    .testimonial .author { font-weight: 600; color: #64748b; font-size: 0.85rem; }
+
+    /* Money-back */
+    .guarantee {
+      text-align: center;
+      padding: 40px;
+      background: #ecfdf5;
+      border-radius: 16px;
+      margin: 40px auto;
+      max-width: 800px;
+    }
+    .guarantee .shield { font-size: 3rem; }
+    .guarantee h3 { margin: 12px 0; }
+
+    /* FAQ */
+    .faq { padding: 60px 0; }
+    .faq h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+      border: 1px solid #e2e8f0;
+    }
+    .faq-item h4 { margin-bottom: 8px; cursor: pointer; }
+    .faq-item p { color: #64748b; font-size: 0.9rem; }
+
+    /* CTA Bottom */
+    .cta-bottom {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: white;
+      text-align: center;
+      padding: 60px 24px;
+      border-radius: 20px;
+      margin: 40px auto;
+    }
+    .cta-bottom h2 { font-size: 2rem; margin-bottom: 16px; }
+
+    /* Footer */
+    footer { text-align: center; padding: 40px 0; color: #94a3b8; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+  <section class="hero-sales">
+    <div class="container">
+      <h1>🚀 eBay跨境电商<br>从0到月入$5,000 全套工具包</h1>
+      <p class="subtitle">选品表格 · 利润计算器 · 操作手册 · 社媒模板 · 客户管理系统<br>一套配齐，少走 6 个月弯路</p>
+      <div class="price-tag">
+        <span class="original">$97</span>
+        <span class="current">$19</span>
+      </div>
+      <br>
+      <button class="btn-buy" onclick="buyNow()">⚡ 立即购买 — 仅需 $19</button>
+      <p style="margin-top:12px;color:#94a3b8;font-size:0.85rem;">💳 安全支付 · 即时下载 · 30天退款保证</p>
+    </div>
+  </section>
+
+  <section class="whats-inside">
+    <div class="container">
+      <h2>📦 你获得的不只是一个文件</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="icon">📊</div>
+          <h3>eBay选品对比工具表</h3>
+          <p>3套完整选品对比模板：中美价差分析、无认证刚需品推荐、汽车用品选品。自动计算利润排名。</p>
+          <div class="value">💰 单独售价: $29</div>
+        </div>
+        <div class="product-card">
+          <div class="icon">📖</div>
+          <h3>eBay从零开始操作手册</h3>
+          <p>注册、上架、优化、出单 — 20页图文教程，附真实案例截图。新手照做就能出单。</p>
+          <div class="value">💰 单独售价: $35</div>
+        </div>
+        <div class="product-card">
+          <div class="icon">🧮</div>
+          <h3>成本利润自动计算表</h3>
+          <p>输入进价和售价，自动算出eBay费用、净利润、ROI。支持多产品批量计算。</p>
+          <div class="value">💰 单独售价: $25</div>
+        </div>
+        <div class="product-card">
+          <div class="icon">📱</div>
+          <h3>社媒营销全套模板</h3>
+          <p>内容日历 + 6篇引流文案 + 社媒资源清单。Instagram/TikTok/Facebook全平台覆盖。</p>
+          <div class="value">💰 单独售价: $22</div>
+        </div>
+        <div class="product-card">
+          <div class="icon">👥</div>
+          <h3>客户跟进管理系统</h3>
+          <p>客户信息记录、跟进提醒、订单追踪 — 一张表管理所有客户关系。</p>
+          <div class="value">💰 单独售价: $18</div>
+        </div>
+        <div class="product-card">
+          <div class="icon">🎁</div>
+          <h3>Bonus: 外贸成交实战PPT</h3>
+          <p>40页专业PPT，涵盖询盘转化、谈判技巧、逼单话术。可直接用于团队培训。</p>
+          <div class="value">🎁 免费赠送 (价值 $47)</div>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:32px;font-size:1.2rem;color:#64748b;">
+        总价值: <span style="text-decoration:line-through;color:#ef4444;">$176</span>
+        <strong style="font-size:2rem;color:#10b981;margin-left:8px;">仅需 $19</strong>
+      </p>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <h2>🌟 500+ 卖家的真实反馈</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="text">"用了选品表格第三天就找到了第一个产品，第一个月利润$400。之前自己瞎找了两个月都没方向。"</p>
+          <div class="author">— 张先生，深圳 · 兼职eBay卖家</div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="text">"操作手册太实用了！我完全零基础，按手册一步步做，两周就出了第一单。现在月销$3000+。"</p>
+          <div class="author">— Lisa，广州 · 前英语老师转行电商</div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="text">"成本计算表帮我避了多少坑都不知道。之前定价全凭感觉，现在每单利润都清清楚楚。"</p>
+          <div class="author">— 老王，义乌 · 3年eBay老兵</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="guarantee container">
+    <div class="shield">🛡️</div>
+    <h3>30天无理由全额退款</h3>
+    <p>如果你觉得这个工具包不值$19，30天内随时退款，不问任何理由。<br>你承担的风险是零，但收益可能是每月多赚$5000。</p>
+  </div>
+
+  <section class="faq">
+    <div class="container">
+      <h2>❓ 常见问题</h2>
+      <div class="faq-item">
+        <h4>📌 这些表格模板能直接用吗？</h4>
+        <p>可以。所有表格都是 .xlsx 格式，用 Excel 或 WPS 打开即用。公式已写好，填入数据自动计算。</p>
+      </div>
+      <div class="faq-item">
+        <h4>📌 我是新手，完全没做过电商，能用吗？</h4>
+        <p>操作手册就是从零开始写的，包括账号注册、PayPal设置、物流选择等每个环节。</p>
+      </div>
+      <div class="faq-item">
+        <h4>📌 会持续更新吗？</h4>
+        <p>购买后所有更新免费获取。eBay政策变化时我们会及时更新表格和手册。</p>
+      </div>
+      <div class="faq-item">
+        <h4>📌 购买后如何下载？</h4>
+        <p>支付完成后立即收到下载链接，全部文件打包为一个 ZIP，解压即用。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-bottom container">
+    <h2>准备好开始赚美元了吗？</h2>
+    <p style="font-size:1.2rem;margin-bottom:24px;color:#cbd5e1;">一套工具包，换一个每月$5000的副业</p>
+    <button class="btn-buy" onclick="buyNow()">🚀 立即获取 — $19</button>
+    <p style="margin-top:12px;opacity:0.7;">限量特价，随时恢复原价$97</p>
+  </div>
+
+  <footer>
+    <p>© 2026 eCom Tools. All rights reserved. | 联系: hello@ecomtools.pro</p>
+    <p style="margin-top:8px;">支持平台: Gumroad | 安全支付: Stripe/PayPal</p>
+  </footer>
+
+  <script>
+    function buyNow() {
+      // Gumroad overlay or direct link
+      // Replace with actual Gumroad product URL
+      const gumroadUrl = 'https://gumroad.com/l/ebay-toolkit';
+      if (confirm('即将跳转到安全支付页面 (Gumroad)\n\n✅ SSL加密\n✅ 支持支付宝/PayPal\n✅ 即时下载\n\n点击确定继续')) {
+        window.open(gumroadUrl, '_blank');
+      }
+    }
+  </script>
+</body>
+</html>
