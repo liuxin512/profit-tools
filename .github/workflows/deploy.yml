@@ -1,0 +1,46 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Copy files
+        run: |
+          mkdir -p _site
+          cp -r public/* _site/
+          cp -r src _site/
+          # Copy SEO blog
+          cp -r seo-blog _site/
+          # Copy digital products landing page
+          mkdir -p _site/products
+          cp digital-products/landing-page.html _site/products/index.html
+          # Copy automation dashboard
+          mkdir -p _site/dashboard
+          cp automation/income-tracker.html _site/dashboard/index.html
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
